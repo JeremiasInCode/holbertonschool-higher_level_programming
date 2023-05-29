@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 
 def uppercase(str):
-    for element in range(len(str)):
+    for element in str:
         elementN = ord(str[element])
         if (elementN >= 97 and elementN <= 122):
             elementN = elementN - 32
-        print("{}".format(chr(elementN)), end='')
+        print("{}".format(chr(elementN)), end="")
     print("")
-
