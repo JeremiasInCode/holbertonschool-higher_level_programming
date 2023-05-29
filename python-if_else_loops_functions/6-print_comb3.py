@@ -1,9 +1,6 @@
 #!/usr/bin/python3
-combinations = []
-
-for first in range(10):
-    for second in range(first + 1, 10):
-        combinations.append("{}{}".format(first, second))
-
-print(", ".join(combinations))
-
+for first in range(9):
+    for second in range(1, 10):
+        if first < second:
+            print("{}{}".format(first, second), end=", ")
+print(98)
