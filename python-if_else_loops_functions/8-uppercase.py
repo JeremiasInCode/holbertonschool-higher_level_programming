@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def uppercase(str):
     for element in range(len(str)):
         elementN = ord(str[element])
