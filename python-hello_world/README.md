@@ -1,1 +1,1 @@
-# holbertonschool-higher_level_programming
+# This is the python-hello_word repository
