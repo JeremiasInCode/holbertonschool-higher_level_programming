@@ -3,8 +3,8 @@
 def replace_in_list(my_list, idx, element):
     lenghtArr = len(my_list)
 
-    if idx < 0 or idx > lenghtArr:
-        return
+    if idx < 0 or idx >= lenghtArr:
+        return my_list
 
     my_list[idx] = element
     return my_list
