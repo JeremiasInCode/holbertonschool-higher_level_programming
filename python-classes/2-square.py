@@ -5,7 +5,7 @@
 class Square:
     """A class representing a square."""
 
-    def __init__(self, size) -> 0:
+    def __init__(self, size=0):
         if (type(size) == int):
             if (size < 0):
                 TypeError("size must be >= 0")
@@ -13,3 +13,4 @@ class Square:
                 self.__size = size
         else:
             TypeError("size must be an integer")
+    pass
