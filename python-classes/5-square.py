@@ -36,14 +36,14 @@ class Square:
         area = self.__size ** 2
         return area
 
-    def print(self):
+    def my_print(self):
         """ prints in stdout the square with the character # """
         cant = self.__size
         if (cant == 0):
-            print()
+            print("")
             return
         for first_element in range(0, cant):
             for second_element in range(0, cant):
                 print("#", end="")
-            print()
+            print("")
     pass
