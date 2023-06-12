@@ -10,14 +10,7 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """ Initialize an instance of Square. """
 
-        if type(size) == int:
-            if size < 0:
-                raise ValueError("size must be >= 0")
-            else:
-                self.__size = size
-        else:
-            raise TypeError("size must be an integer")
-
+        self.__size = size
         if isinstance(position, tuple):
             try:
                 if isinstance((position[0], int) and position[1], int):
