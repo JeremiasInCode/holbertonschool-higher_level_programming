@@ -20,7 +20,7 @@ class Square:
 
         if isinstance(position, tuple):
             try:
-                if isinstance(position[0], int) and isinstance(position[1], int):
+                if (isinstance(position[0], int) and isinstance(position[1], int)):
                     if position[0] >= 0 and position[1] >= 0:
                         self.__position = position
                     else:
@@ -57,7 +57,7 @@ class Square:
         """Set the position of the Square."""
         if isinstance(value, tuple):
             try:
-                if isinstance(value[0], int) and isinstance(value[1], int):
+                if (isinstance(value[0], int) and isinstance(value[1], int)):
                     if value[0] >= 0 and value[1] >= 0:
                         self.__position = value
                     else:
