@@ -3,9 +3,13 @@
 
 
 class Square:
+    """ A class representing a square. """
+
     error = "position must be a tuple of 2 positive integers"
 
     def __init__(self, size=0, position=(0, 0)):
+        """ Initialize an instance of Square. """
+
         if type(size) == int:
             if size < 0:
                 raise ValueError("size must be >= 0")
@@ -15,13 +19,16 @@ class Square:
             raise TypeError("size must be an integer")
 
         if isinstance(position, tuple):
-            if isinstance((position[0], int) and position[1], int):
-                if position[0] >= 0 and position[1] >= 0:
-                    self.__position = position
+            try:
+                if isinstance((position[0], int) and position[1], int):
+                    if position[0] >= 0 and position[1] >= 0:
+                        self.__position = position
+                    else:
+                        raise ValueError(Square.error)
                 else:
-                    raise ValueError(Square.error)
-            else:
-                raise TypeError(Square.error)
+                    raise TypeError(Square.error)
+            except IndexError:
+                print(Square.error)
         else:
             raise TypeError(Square.error)
 
@@ -49,13 +56,16 @@ class Square:
     def position(self, value):
         """Set the position of the Square."""
         if isinstance(value, tuple):
-            if isinstance((value[0], int) and value[1], int):
-                if value[0] >= 0 and value[1] >= 0:
-                    self.__position = value
+            try:
+                if isinstance((value[0], int) and value[1], int):
+                    if value[0] >= 0 and value[1] >= 0:
+                        self.__position = value
+                    else:
+                        raise ValueError(Square.error)
                 else:
-                    raise ValueError(Square.error)
-            else:
-                raise TypeError(Square.TUPLEERROR)
+                    raise TypeError(Square.TUPLEERROR)
+            except IndexError:
+                print(Square.error)
         else:
             raise TypeError(Square.TUPLEERROR)
 
