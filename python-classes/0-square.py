@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""Square class"""
-
+# -*- coding: utf-8 -*-
 """
-Author: Jeremias Erba.
-Date: 12/06/2023
+Created on Mon June 12 9:50:00 2023.
+
+@author: JeremiasInCode
+@description: Creation of a class called Square
+
 """
 
 
