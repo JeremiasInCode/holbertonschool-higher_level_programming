@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Task 3 """
 
+
 class Square:
     """A class representing a square."""
 
@@ -15,9 +16,9 @@ class Square:
 
     @property
     def size(self):
-        """Return the size of the Square."""
+        """Return the size of the Square as a property."""
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """ Sets the size of the Square. """
@@ -28,7 +29,7 @@ class Square:
                 self.__size = value
         else:
             raise TypeError("size must be an integer")
-    
+
     def area(self):
         """Return the area of the Square."""
         area = self.__size ** 2
