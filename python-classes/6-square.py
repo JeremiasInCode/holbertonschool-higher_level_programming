@@ -20,7 +20,7 @@ class Square:
 
         if isinstance(position, tuple):
             try:
-                if isinstance((position[0], int) and position[1], int):
+                if isinstance(position[0], int) and isinstance(position[1], int):
                     if position[0] >= 0 and position[1] >= 0:
                         self.__position = position
                     else:
