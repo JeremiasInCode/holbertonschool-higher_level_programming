@@ -64,11 +64,11 @@ class Square:
                     else:
                         raise ValueError(Square.error)
                 else:
-                    raise TypeError(Square.TUPLEERROR)
+                    raise TypeError(Square.error)
             except IndexError:
                 print(Square.error)
         else:
-            raise TypeError(Square.TUPLEERROR)
+            raise TypeError(Square.error)
 
     def area(self):
         "This function to calulate the area of a square"
