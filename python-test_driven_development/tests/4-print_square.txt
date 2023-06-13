@@ -31,7 +31,7 @@ Now use it:
       Traceback (most recent call last):
       ...
       ValueError: size must be an integer
-      >>> print_square(-2.1)
+      >>> print_square(2.1)
       Traceback (most recent call last):
       ...
       TypeError: size must be an integer
