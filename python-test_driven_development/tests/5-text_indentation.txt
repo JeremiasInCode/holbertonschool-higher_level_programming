@@ -49,11 +49,6 @@ Now use it:
     Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
     
     >>> text_indentation("")
-    
-    >>> text_indentation(1)
-    Traceback (most recent call last):
-    ...
-    TypeError: text must be a string
 
     >>> text_indentation("Holberton School")
     Holberton School
@@ -62,6 +57,11 @@ Now use it:
     Holberton.
     <BLANKLINE>
     School
+
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
 
     >>> text_indentation(None)
     Traceback (most recent call last):
