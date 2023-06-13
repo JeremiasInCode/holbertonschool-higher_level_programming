@@ -5,6 +5,7 @@
 class Square:
     """ A class representing a square. """
 
+    # error by betty.
     error = "position must be a tuple of 2 positive integers"
 
     def __init__(self, size=0, position=(0, 0)):
