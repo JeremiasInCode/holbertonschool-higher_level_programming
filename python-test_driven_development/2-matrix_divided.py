@@ -25,11 +25,11 @@ def matrix_divided(matrix, div):
         if len_original_row != len(row):
             raise TypeError(size_error)
         for element in row:
-            if element % div == 0 and isinstance(element, (int, float)):
+            if isinstance(element, (int, float)):
                 buffer_row.append(round(element / div, 2))
             else:
                 raise TypeError(error)
         new_matrix.append(buffer_row)
-        buffer_row = []  # For each row, it is cleaned
-
+        """For each row, it is cleaned"""
+        buffer_row = []
     return new_matrix
