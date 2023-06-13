@@ -20,7 +20,8 @@ class Square:
 
         if isinstance(position, tuple):
             try:
-                if (isinstance(position[0], int) and isinstance(position[1], int)):
+                if (isinstance(position[0], int) and
+                        isinstance(position[1], int)):
                     if position[0] >= 0 and position[1] >= 0:
                         self.__position = position
                     else:
@@ -81,13 +82,14 @@ class Square:
             print("")
             return
 
-        for element in range(self._Square__position[1]):
-            print()
+        # Don’t fill lines by spaces when position[1] > 0
+        # is already greater that one, so we do nothing.
+        for element in range(self.__position[1]):
+            print("")
 
         for element1 in range(self.__size):
             for element1 in range(self.position[0]):
                 print(" ", end="")
-            for element3 in range(self.position[1]):
+            for element3 in range(self.size):
                 print("#", end="")
-            print()
-    pass
+            print("")
