@@ -13,18 +13,24 @@ Now use it:
 
     >>> add_integer(1, 2)
     3
+    >>> add_integer(2)
+    100
+    >>> add_integer(2, 1**2)
+    3
+    >>> add_integer(-400)
+    -302
     >>> add_integer(1/2)
     98
-    >>> add_integer("texta", 102)
+    >>> add_integer(1^2)
+    101
+    >>> add_integer(100, "stringb")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+    >>> add_integer("stringa", 100)
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
-    >>> add_integer(103.3, -2)
-    98
-    >>> add_integer(100, "textb")
-    Traceback (most recent call last):
-    ...
-    TypeError: b must be integer
     >>> add_integer(float('inf'))
     Traceback (most recent call last):
     ...
