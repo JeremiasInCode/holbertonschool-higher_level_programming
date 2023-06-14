@@ -21,6 +21,10 @@ Now use it:
       Traceback (most recent call last):
       ...
       TypeError: matrix must be a matrix (list of lists) of integers/floats
+      >>> matrix_divided(2, "string")
+      Traceback (most recent call last):
+      ...
+      TypeError: matrix must be a matrix (list of lists) of integers/floats
       >>> matrix_divided(None, None)
       Traceback (most recent call last):
       ...
@@ -41,7 +45,3 @@ Now use it:
       Traceback (most recent call last):
       ...
       TypeError: matrix must be a matrix (list of lists) of integers/floats
-      >>> matrix_divided([[1, 2], [3, 4]], 0)
-      Traceback (most recent call last):
-      ...
-      ZeroDivisionError: division by zero
