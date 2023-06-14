@@ -8,7 +8,7 @@ Rectangle:
 """
 
 
-class Rectangle:
+class Square:
     """Empty class for Rectangle."""
 
     pass
