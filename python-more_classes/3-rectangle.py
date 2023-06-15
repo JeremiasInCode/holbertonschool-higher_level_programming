@@ -65,6 +65,24 @@ class Rectangle:
         """ Print rectangle. """
         if self.__width == 0 or self.height == 0:
             return ''
-        for i in range(self.__height):
+        """ subtract one to take out the space and print on the outside """
+        for i in range(self.__height - 1):
             print("#" * self.__width)
+        print('#' * self.__width, end="")
         return ''
+
+def main():
+    my_rectangle = Rectangle(2, 4)
+    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+    print(str(my_rectangle))
+    print(repr(my_rectangle))
+
+    print("--")
+
+    my_rectangle.width = 10
+    my_rectangle.height = 3
+    print(my_rectangle)
+    print(repr(my_rectangle))
+
+main()
