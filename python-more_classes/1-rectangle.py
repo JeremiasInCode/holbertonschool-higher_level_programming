@@ -12,6 +12,7 @@ class Rectangle:
     def height(self):
         """Return the height of Rectangle as a property."""
         return self.__height
+
     @property
     def width(self):
         """Return the width of Rectangle as a property."""
@@ -32,14 +33,3 @@ class Rectangle:
         elif value < 0:
             raise TypeError("width must be >= 0")
         self.__width = value
-
-
-def main():
-    my_rectangle = Rectangle(2, 4)
-    print(my_rectangle.__dict__)
-
-    my_rectangle.width = 10
-    my_rectangle.height = 3
-    print(my_rectangle.__dict__)
-
-main()
