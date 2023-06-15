@@ -72,8 +72,8 @@ class Rectangle:
             return ''
         """ subtract one to take out the space and print on the outside """
         for i in range(self.__height - 1):
-            print(str(Rectangle.print_symbol) * self.__width)
-        print(str(Rectangle.print_symbol) * self.__width, end="")
+            print(str(self.print_symbol) * self.__width)
+        print(str(self.print_symbol) * self.__width, end="")
         return ''
 
     def __repr__(self):
