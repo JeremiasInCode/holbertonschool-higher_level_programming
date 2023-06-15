@@ -72,6 +72,11 @@ class Rectangle:
         return ''
 
     def __repr__(self):
-        """Return a formal representation of the Rectangle"""
+        """ Return a formal representation of the Rectangle """
         string = f"Rectangle({self.__width}, {self.__height})"
         return string
+
+    def __del__(self):
+        """ Return custom message when the construct is deleted """
+        string = f"Bye rectangle..."
+        return (string)
