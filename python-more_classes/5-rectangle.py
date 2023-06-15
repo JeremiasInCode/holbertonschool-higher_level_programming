@@ -78,5 +78,4 @@ class Rectangle:
 
     def __del__(self):
         """ Return custom message when the construct is deleted """
-        string = "Bye rectangle..."
-        return string
+        print("Bye rectangle...")
