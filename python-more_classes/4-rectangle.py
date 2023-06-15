@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Task 2 """
+""" Task 4 """
 
 
 class Rectangle:
@@ -70,13 +70,8 @@ class Rectangle:
             print("#" * self.__width)
         print('#' * self.__width, end="")
         return ''
-
+    
     def __repr__(self):
-        """ Return a formal representation of the Rectangle """
+        """Return a formal representation of the Rectangle"""
         string = f"Rectangle({self.__width}, {self.__height})"
         return string
-
-    def __del__(self):
-        """ Return custom message when the construct is deleted """
-        string = f"Bye rectangle..."
-        return (string)
