@@ -5,4 +5,6 @@
 class MyList(list):
     """ Prints the list, but sorted in ascending sort """
     def print_sorted(self):
-        print(sorted(self))
+        if hasattr(self, '__str__'):
+            print(sorted(self))
+            return (sorted(self))
