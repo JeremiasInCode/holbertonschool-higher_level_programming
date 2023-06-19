@@ -5,9 +5,6 @@
 class Rectangle:
     """Representation for Rectangle."""
 
-    """ public class atribute """
-    number_of_instances = 0
-
     def __init__(self, width=0, height=0):
         """Initializate the rectangle."""
 
@@ -23,7 +20,6 @@ class Rectangle:
 
         self.__height = height
         self.__width = width
-        Rectangle.number_of_instances =+ 1
 
     @property
     def width(self):
@@ -83,4 +79,3 @@ class Rectangle:
     def __del__(self):
         """ Return custom message when the construct is deleted """
         print("Bye rectangle...")
-        Rectangle.number_of_instances =- 1

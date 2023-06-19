@@ -9,6 +9,6 @@ Rectangle:
 
 
 class Square:
-    """Empty class for Rectangle."""
+    """Empty class for Square."""
 
     pass
