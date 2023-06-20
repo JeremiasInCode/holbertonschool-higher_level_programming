@@ -11,7 +11,6 @@ Test for MyList function. First import
 
 Now use it:
 
-
     >>> my_list = MyList()
     >>> my_list.append(1)
     >>> my_list.append(3)
