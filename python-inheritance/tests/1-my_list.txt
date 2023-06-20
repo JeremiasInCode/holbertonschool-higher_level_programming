@@ -4,7 +4,7 @@ The ``1-my_list`` module
 Using ``MyList``
 -------------------
 
-Test for add_integer function. First import
+Test for MyList function. First import
 ``MyList`` from the ``1-my_list`` module:
 
     >>> MyList = __import__('1-my_list').MyList
