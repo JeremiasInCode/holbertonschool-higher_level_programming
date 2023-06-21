@@ -4,6 +4,5 @@
 
 def write_file(filename="", text=""):
     """ Write a file """
-    with open(filename, "w") as MyFile
-        MyFile.write(text)
-    return len(text)
+    with open(filename, "w") as MyFile:
+        return MyFile.write(MyFile)
