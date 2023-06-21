@@ -13,5 +13,5 @@ try:
 except FileNotFoundError:
     data_obj = []
 
-data_obj.extends(sys)
+data_obj.extend(args)
 save_to_json_file(data_obj, 'add_item.json')
