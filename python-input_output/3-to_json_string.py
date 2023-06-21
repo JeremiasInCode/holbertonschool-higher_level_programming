@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import json
 """ Task 3 """
+import json
 
 
 def to_json_string(my_obj):
-    """ Return the object in json format """
+    """ object in json format """
     return json.dumps(my_obj)
