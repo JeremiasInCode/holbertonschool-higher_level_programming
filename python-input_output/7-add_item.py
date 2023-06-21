@@ -6,6 +6,7 @@ import sys
 
 save_to_json_file = __import__('save_to_json_file').save_to_json_file
 load_from_json_file = __import__('load_from_json_file').load_from_json_file
+args = sys.argv[1:]
 
 try:
     with open('add_item.json') as f:
