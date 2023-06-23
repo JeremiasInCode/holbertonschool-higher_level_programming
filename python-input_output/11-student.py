@@ -24,5 +24,10 @@ class Student:
 
     def reload_from_json(self, json):
         for element in json:
+            """Verify that the attribute exist in the class instance"""
             if hasattr(self, element):
+                """
+                    Sets the name of the element and 
+                    the value of itself.
+                """
                 setattr(self, element, json[element])
