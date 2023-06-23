@@ -21,3 +21,8 @@ class Student:
                     if new_dict[element] is AttributeError:
                         continue
             return new_dict
+
+    def reload_from_json(self, json):
+        for element in json:
+            if hasattr(self, element):
+                setattr(self, element, json[element])
