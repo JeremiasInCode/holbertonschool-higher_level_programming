@@ -12,7 +12,9 @@ def pascal_triangle(n):
     concat1 = row + cero
     concat2 = cero + row
 
+    """ concat in pairs """
     pairs = zip(concat1, concat2)
-    add = [element + d for element, d in pairs]
+    """ Add these pairs to create the row """
+    add = [element + d for element, d in pairs] 
     triangle.append(add)
     return triangle
