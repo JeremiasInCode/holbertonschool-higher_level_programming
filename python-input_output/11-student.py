@@ -27,7 +27,7 @@ class Student:
             """Verify that the attribute exist in the class instance"""
             if hasattr(self, element):
                 """
-                    Sets the name of the element and 
+                    Sets the name of the element and
                     the value of itself.
                 """
                 setattr(self, element, json[element])
