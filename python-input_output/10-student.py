@@ -18,4 +18,6 @@ class Student:
             for element in attrs:
                 if hasattr(self, element):
                     new_dict[element] = getattr(self, element)
+                    if new_dict[element] is AttributeError:
+                        continue
             return new_dict
