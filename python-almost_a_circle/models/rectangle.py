@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 """Task 3"""
-from models.base import Base
 
 
-class Rectangle(Base):
+class Rectangle():
     """ Initialize an instance """
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
@@ -86,3 +84,19 @@ class Rectangle(Base):
     def area(self):
         """ Return the area of the rectangle """
         return self.width * self.height
+
+    def display(self):
+        for j in range(self.height):
+            print(' ' * self.x, end="")
+            print('#' * self.width)
+
+def main():
+    r1 = Rectangle(4, 6)
+    r1.display()
+
+    print("---")
+
+    r1 = Rectangle(2, 2)
+    r1.display()
+
+main()
