@@ -49,11 +49,20 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ Sets x of the Rectangle. """
+        pass
 
     @property
-    def y(self, value):
+    def y(self):
         """
         Private instance attributes,
         Return x of the Rectangle as a property.
         """
         return self.__y
+    
+    @y.setter
+    def y(self, value):
+        """
+        Private instance attributes,
+        Return y of the Rectangle as a property.
+        """
+        pass
