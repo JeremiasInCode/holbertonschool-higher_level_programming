@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Task 3"""
+from models.base import Base
 
-
-class Rectangle():
+class Rectangle(Base):
     """ Initialize an instance """
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
