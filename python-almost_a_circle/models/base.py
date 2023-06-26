@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Task 1"""
 
+
 class Base:
     __nb_objects = 0
 
