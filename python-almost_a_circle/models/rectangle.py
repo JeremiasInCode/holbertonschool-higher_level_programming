@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Task 3"""
+"""Task Rectangle class"""
 from models.base import Base
+
 
 class Rectangle(Base):
     """ Initialize an instance """
