@@ -3,9 +3,9 @@
 
 
 class Base:
-    """ Base class """
+    """ Define a private attribute """
     __nb_objects = 0
-
+    """ Class constructor"""
     def __init__(self, id=None):
         """
             Initialize an instance abd verify if id is None
@@ -14,4 +14,4 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-        self.id = Base.__nb_objects
+            self.id = Base.__nb_objects
