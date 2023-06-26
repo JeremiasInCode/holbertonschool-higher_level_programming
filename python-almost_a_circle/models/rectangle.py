@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Task 2"""
-Base = __import__("base.py").Base
+from models.base import Base
 
 
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ Initialize an instance """
         super().__init__(id)
         self.__width = width
         self.__height = height
