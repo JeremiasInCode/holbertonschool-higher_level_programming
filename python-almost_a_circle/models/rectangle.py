@@ -4,8 +4,8 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """ Initialize an instance """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Initialize an instance """
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -23,7 +23,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """ Sets the width of the Rectangle. """
-        pass
+        self.__width = value
 
     @property
     def height(self):
@@ -36,7 +36,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """ Sets the height of the Rectangle. """
-        pass
+        self.__height = value
 
     @property
     def x(self):
@@ -49,7 +49,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ Sets x of the Rectangle. """
-        pass
+        self.__x = value
 
     @property
     def y(self):
@@ -58,11 +58,11 @@ class Rectangle(Base):
         Return x of the Rectangle as a property.
         """
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """
         Private instance attributes,
         Return y of the Rectangle as a property.
         """
-        pass
+        self.__y = value
