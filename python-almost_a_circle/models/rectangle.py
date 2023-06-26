@@ -86,17 +86,6 @@ class Rectangle():
         return self.width * self.height
 
     def display(self):
-        for j in range(self.height):
+        for element in range(self.height):
             print(' ' * self.x, end="")
             print('#' * self.width)
-
-def main():
-    r1 = Rectangle(4, 6)
-    r1.display()
-
-    print("---")
-
-    r1 = Rectangle(2, 2)
-    r1.display()
-
-main()
