@@ -98,7 +98,12 @@ class Rectangle(Base):
         aux = f"{self.width}/{self.height}"
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {aux}")
 
-    def update(self, *args):
-        attributes = ['id', 'width', 'height', 'x', 'y']
-        for i, value in enumerate(args):
-            setattr(self, attributes[i + 1], value)
+    def update(self, *args, **name_args):
+        self.id = args[0]
+        self.width = args[1]
+        self.height = args[2]
+        self.x = args[3]
+        self.y = args[4]
+
+        for key, value in name_args.items():
+            setattr(self, key, value)
