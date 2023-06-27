@@ -11,3 +11,21 @@ class Square(Rectangle):
     def __str__(self):
         """ Print [Square] (<id>) <x>/<y> - <size> """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    @property
+    def size(self):
+        """
+        Private instance attributes,
+        Return width of the Rectangle as a property.
+        """
+        return self.__width
+
+    @size.setter
+    def size(self, value):
+        """
+            Sets the width of the Square.
+            - When I doing self.__width call to the width
+            of the setter of rectangle executing the logic.
+        """
+        self.width = value
+        self.height = value
