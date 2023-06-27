@@ -22,10 +22,6 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        """
-            Sets the width of the Square.
-            - When I doing self.__width call to the width
-            of the setter of rectangle executing the logic.
-        """
+        """ Sets the width of the Square"""
         self.width = value
         self.height = value
