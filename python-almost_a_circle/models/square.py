@@ -43,5 +43,6 @@ class Square(Rectangle):
             setattr(self, key, value)
 
     def to_dictionary(self):
-        """ Return a represent of dictionario (json jej) """
-        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+        """ Return a represent of dictionario of Square (json :-) -) """
+        square_dict = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+        return square_dict
