@@ -99,7 +99,7 @@ class Rectangle(Base):
         aux = f"{self.width}/{self.height}"
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {aux}")
 
-    def update(self, *args, **args_dict):
+    def update(self, *args, **kwargs):
         """ Assigns an argument to each attribute. """
         if len(args) >= 1:
             self.id = args[0]
@@ -112,5 +112,5 @@ class Rectangle(Base):
         if len(args) >= 5:
             self.y = args[4]
 
-        for key, value in args_dict.items():
-            hasattr(self, key, value)
+        for key, value in kwargs.items():
+            setattr(self, key, value)
