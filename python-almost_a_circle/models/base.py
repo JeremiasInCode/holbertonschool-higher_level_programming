@@ -60,10 +60,6 @@ class Base:
         """
 
         """I need a instance before to call update function"""
-        if cls.__name__ == "Rectangle":
-            dummy_instance = cls(0, 0)
-        elif cls.__name__ == "Square":
-            dummy_instance = cls(0)
-        """ to initialize attributes """
+        dummy_instance = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         dummy_instance.update(**dictionary)
         return dummy_instance
