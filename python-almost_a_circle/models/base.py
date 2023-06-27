@@ -48,7 +48,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ Convert Json format to a object """
+        """ Convert Json format to a object (dictionary - key and value) """
         if not json_string:
             return []
         return json.loads(json_string)
@@ -73,8 +73,8 @@ class Base:
             with open(name_class, "r") as file:
                 json_data = file.read()
                 if json_data:
-                    object_data = cls.from_json_string(json_data)
-                    for dictionary in object_data:
+                    dictionary_data = cls.from_json_string(json_data)
+                    for dictionary in dictionary_data:
                         instance = cls.create(**dictionary)
                         instance_list.append(instance)
         except FileNotFoundError:
