@@ -80,3 +80,9 @@ class Base:
         except FileNotFoundError:
             return []
         return instance_list
+
+def main():
+    obj = Base()
+    print(obj.from_json_string([{'id': 89, 'width': 10, 'height': 4}]))
+
+main()
