@@ -28,6 +28,10 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ 
+            Convert list_objs to json format and save to 
+            a file with a .json extension.
+        """
         if list_objs is None:
             list_objs = []
 
@@ -41,3 +45,11 @@ class Base:
         json_data = cls.to_json_string(dict_list)
         with open(name_class, "w") as file:
             file.write(json_data)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Convert Json format to a object """
+        if not json_string:
+            new_list = []
+            return new_list
+        json.loads(json_string)
