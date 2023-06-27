@@ -12,16 +12,18 @@ class Square(Rectangle):
         """ Print [Square] (<id>) <x>/<y> - <size> """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
+    """ getter """
     @property
     def size(self):
         """
         Private instance attributes,
         Return width of the Rectangle as a property.
         """
-        return self.__width
+        return self.width
 
+    """ setter """
     @size.setter
     def size(self, value):
-        """ Sets the width of the Square"""
+        """Sets the width of the Square."""
         self.width = value
         self.height = value
