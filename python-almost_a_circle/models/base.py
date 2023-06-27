@@ -50,6 +50,5 @@ class Base:
     def from_json_string(json_string):
         """ Convert Json format to a object """
         if not json_string:
-            new_list = []
-            return new_list
-        json.loads(json_string)
+            return []
+        return json.loads(json_string)
