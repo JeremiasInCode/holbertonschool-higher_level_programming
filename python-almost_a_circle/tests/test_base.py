@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Test for base class """
-import unittest
+import unittest, os
 from models import Base
 
 
@@ -31,5 +31,19 @@ class TestBase(unittest.TestCase):
         test = Base.from_json_string('[{ "id": 30 }]')
         self.assertAlmostEqual(test, [{"id": 30}])
 
-    if __name__ == "__main__":
-        unittest.main()
+    def test_save_to_file(self):
+        """test save_to_file."""
+        r1 = Base.save_to_file(None)
+        self.assertEqual(Base.load_from_file(), [])
+        os.remove("./Square.json")
+        r1 = Base.save_to_file([])
+        self.assertEqual(Base.load_from_file(), [])
+        os.remove("./Square.json")
+        r1 = Base.save_to_file([Base.Square(1)])
+        self.assertIsInstance(Base.load_from_file()[0], Base.Square)
+        os.remove("./Square.json")
+        r1 = Base.load_from_file()
+        self.assertEqual(Base.save_to_file(r1), None)
+
+if __name__ == "__main__":
+    unittest.main()

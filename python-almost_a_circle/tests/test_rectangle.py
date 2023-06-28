@@ -26,7 +26,6 @@ class TestRectangle(unittest.TestCase):
         expected_output = "#####\n" * 10
         self.assertEqual(output, expected_output)
 
-
     def test_update(self):
         self.rectangle1.update(2, 8, 6, 1, 2)
         self.assertEqual(self.rectangle1.width, 8)
