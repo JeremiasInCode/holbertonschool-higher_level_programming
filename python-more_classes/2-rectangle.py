@@ -60,12 +60,3 @@ class Rectangle:
             return 0
         perimeter = 2 * (self.__width + self.__height)
         return perimeter
-
-    def __str__(self):
-        """ Print rectangle. """
-        if self.__width == 0 or self.__height == 0:
-            return ''
-        for i in range(self.__height - 1):
-            print("#" * self.__width)
-        print('#' * self.__width, end="")
-        return ''
