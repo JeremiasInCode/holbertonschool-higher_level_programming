@@ -8,7 +8,7 @@ def matrix_divided(matrix, div):
     size_error = "Each row of the matrix must have the same size"
 
     if (not isinstance(matrix, list) or
-        not all(isinstance(element, list) for element in matrix)):
+            not all(isinstance(element, list) for element in matrix)):
         raise TypeError(error)
 
     if not isinstance(div, (int, float)):
@@ -24,9 +24,8 @@ def matrix_divided(matrix, div):
     for row in matrix:
         if len_original_row != len(row):
             raise TypeError(size_error)
-
         for element in row:
-            if (isinstance(element, (int, float))):
+            if isinstance(element, (int, float)):
                 buffer_row.append(round(element / div, 2))
             else:
                 raise TypeError(error)
