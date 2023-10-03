@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Task 3 """
+""" Task 4 """
 
 
 class Rectangle:
@@ -63,13 +63,14 @@ class Rectangle:
 
     def __str__(self):
         """ Print rectangle. """
-        if self.__width == 0 or self.__height == 0:
+        if self.__width == 0 or self.height == 0:
             return ''
+        """ subtract one to take out the space and print on the outside """
         for i in range(self.__height - 1):
             print("#" * self.__width)
         print('#' * self.__width, end="")
         return ''
-
+    
     def __repr__(self):
         """Return a formal representation of the Rectangle"""
         string = f"Rectangle({self.__width}, {self.__height})"
