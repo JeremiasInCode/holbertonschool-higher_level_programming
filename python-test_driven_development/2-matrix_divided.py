@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Task 2"""
 
+
 def matrix_divided(matrix, div):
     """Divide a matrix."""
     error = "matrix must be a matrix (list of lists) of integers/floats"
