@@ -6,6 +6,7 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """ Initialize the instance """
     def __init__(self, size, x=0, y=0, id=None):
+        """ inherit from rectangle """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -27,7 +28,7 @@ class Square(Rectangle):
         """Sets the width of the Square."""
         self.width = value
         self.height = value
-    
+
     def update(self, *args, **kwargs):
         """ Assigns an argument to each attribute """
         if len(args) >= 1:
@@ -40,3 +41,13 @@ class Square(Rectangle):
             self.y = args[3]
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Return a represent of dictionario of Square (json :-) -) """
+        square_dict = {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
+        return square_dict
