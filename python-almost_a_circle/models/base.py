@@ -35,7 +35,7 @@ class Base:
         json_data = json.dumps(list_dictionaries)
         return json_data
 
-    @staticmethod
+    @classmethod
     def save_to_file(cls, list_objs):
         """
             Convert list_objs to json format and save to
