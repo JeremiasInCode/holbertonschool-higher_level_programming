@@ -54,3 +54,10 @@ class Base:
         json_data = cls.to_json_string(dict_list)
         with open(name_class, "w") as file:
             file.write(json_data)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Convert Json format to a object (dictionary - key and value) """
+        if json_string is None:
+            return []
+        return json.loads(json_string)
