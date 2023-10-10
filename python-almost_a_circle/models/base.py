@@ -26,7 +26,7 @@ class Base:
         json_data = json.dumps(list_dictionaries)
         return json_data
 
-     @staticmethod
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ Convert a list of dictionaries to Json format """
         if not list_dictionaries:
