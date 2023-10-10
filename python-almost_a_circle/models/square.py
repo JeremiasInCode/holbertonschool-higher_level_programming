@@ -51,3 +51,13 @@ class Square(Rectangle):
             'y': self.y
         }
         return square_dict
+
+    def to_dictionary(self):
+        """ Return a represent of dictionario of Square (json :-) -) """
+        square_dict = {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
+        return square_dict
