@@ -43,11 +43,14 @@ class Base:
         """
         if list_objs is None:
             list_objs = []
-        name_class = cls.__name__ + "json"
+
+        name_class = cls.__name__ + '.json'
         dict_list = []
+
         for obj in list_objs:
             dictionary_element = obj.to_dictionary()
             dict_list.append(dictionary_element)
+
         json_data = cls.to_json_string(dict_list)
         with open(name_class, "w") as file:
             file.write(json_data)
