@@ -34,3 +34,13 @@ class Base:
 
         json_data = json.dumps(list_dictionaries)
         return json_data
+
+    @staticmethod
+    def save_to_file(cls, list_objs):
+        if list_objs is None:
+            list_objs = []
+        name_class = cls.__name__ + "json"
+        dict_list = []
+        for obj in list_objs:
+            dictionary_element = obj.to_dictionary()
+            dict_list.append(dictionary_element)
