@@ -3,7 +3,6 @@ from models.rectangle import Rectangle
 from io import StringIO
 import sys
 
-
 class TestRectangle(unittest.TestCase):
     """ Test rectangle class """
     def setUp(self):
