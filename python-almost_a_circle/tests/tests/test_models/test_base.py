@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Test for base class """
-import unittest, os
+import unittest
+import os
 from models.base import Base
 
 
@@ -45,5 +46,5 @@ class TestBase(unittest.TestCase):
         r1 = Base.load_from_file()
         self.assertEqual(Base.save_to_file(r1), None)
 
-if __name__ == "__main__":
-    unittest.main()
+    if __name__ == "__main__":
+        unittest.main()
