@@ -10,7 +10,6 @@ def matrix_divided(matrix, div):
     if (not isinstance(matrix, list) or
             not all(isinstance(element, list) for element in matrix)):
         raise TypeError(error)
-
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
 
