@@ -25,5 +25,5 @@ class TestSquare(unittest.TestCase):
         sq12.update(89, 2, 3, 4)
         self.assertEqual(str(sq12), "[Square] (89) 3/4 - 2")
     
-if __name__ == '__main__':
-    unittest.main()
+    if __name__ == '__main__':
+        unittest.main()

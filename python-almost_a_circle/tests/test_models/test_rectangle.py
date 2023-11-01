@@ -34,5 +34,5 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rectangle1.y, 2)
 
 
-if __name__ == '__main__':
-    unittest.main()
+    if __name__ == '__main__':
+        unittest.main()
