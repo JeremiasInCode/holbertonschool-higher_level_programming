@@ -3,14 +3,13 @@ from models.rectangle import Rectangle
 from io import StringIO
 import sys
 
-
 class TestRectangle(unittest.TestCase):
     """ Test rectangle class """
     def setUp(self):
         self.rectangle1 = Rectangle(5, 10)
         self.rectangle2 = Rectangle(7, 3, 2, 4, 1)
 
-    """ Test area function """
+    """ Test area function """  
     def test_area(self):
         self.assertEqual(self.rectangle1.area(), 50)
         self.assertEqual(self.rectangle2.area(), 21)
@@ -19,7 +18,7 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
         rectangle_dis = Rectangle(5, 10)
         captured_output = StringIO()
-        sys.stdout = captured_output
+        sys.stdout = captured_output    
         rectangle_dis.display()
         sys.stdout = sys.__stdout__
 
