@@ -31,13 +31,17 @@ class Square:
     @position.setter
     def position(self, value):
         """Set the position of the Square."""
-        if len(value) == 2 and isinstance(value, tuple):
-            x = value
-            y = value
-            if isinstance(x, int) and isinstance(y, int) and x >= 0 and y >= 0:
-                self.__position = value
-            else:
-                raise ValueError(Square.error)
+        if isinstance(value, tuple):
+            try:
+                if (isinstance(value[0], int) and isinstance(value[1], int)):
+                    if value[0] >= 0 and value[1] >= 0:
+                        self.__position = value
+                    else:
+                        raise ValueError(Square.error)
+                else:
+                    raise TypeError(Square.error)
+            except IndexError:
+                print(Square.error)
         else:
             raise TypeError(Square.error)
 
