@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
 """
 @author: JeremiasInCode
 @classes:
@@ -10,5 +9,4 @@ Rectangle:
 
 class Square:
     """Empty class for Square."""
-
     pass
