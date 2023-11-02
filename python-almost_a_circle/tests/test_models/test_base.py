@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Test for base class """
-import unittest, os
+import unittest
+import os
 from models.base import Base
 
 

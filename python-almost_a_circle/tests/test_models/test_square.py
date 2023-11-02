@@ -1,6 +1,7 @@
 import unittest
 from models import square
 
+
 class TestSquare(unittest.TestCase):
     """ Test square class """
     def general_test(self):
@@ -24,6 +25,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(str(sq12), "[Square] (89) 3/2 - 2")
         sq12.update(89, 2, 3, 4)
         self.assertEqual(str(sq12), "[Square] (89) 3/4 - 2")
-    
+
     if __name__ == '__main__':
         unittest.main()
