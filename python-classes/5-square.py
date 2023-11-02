@@ -14,10 +14,12 @@ class Square:
         else:
             raise TypeError("size must be an integer")
 
+
     @property
     def size(self):
         """Return the size of the Square as a property."""
         return self.__size
+
 
     @size.setter
     def size(self, value):
@@ -31,10 +33,12 @@ class Square:
         else:
             raise TypeError("size must be an integer")
 
+
     def area(self):
         """ Return the area of the Square. """
         area = self.__size ** 2
         return area
+
 
     def my_print(self):
         """ prints in stdout the square with the character # """
