@@ -14,4 +14,5 @@ if __name__ == "__main__":
     states = db_cursor.fetchall()
     for state in states:
         print(state)
+    db_cursor.close()
     db_conn.close()
