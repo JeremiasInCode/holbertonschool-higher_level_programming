@@ -17,7 +17,7 @@ if __name__ == "__main__":
     )
 
     db_cursor = db_conn.cursor()
-    db_cursor.execute("SELECT * FROM states")
+    db_cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
     rows_selected = db_cursor.fetchall()
 
     db_conn.close()
