@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 ''' 0-select_states module '''
 
+import MySQLdb
+from sys import argv
+
+
 if __name__ == "__main__":
-    import MySQLdb
-    from sys import argv
+    """./0-select_states.py root root hbtn_0e_0_usa"""
 
     db = MySQLdb.connect(
         host='localhost',
@@ -15,6 +18,6 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute("""SELECT * FROM states""")
     statesList = cursor.fetchall()
+    db.close()
     for item in statesList:
         print(item)
-    db.close()
