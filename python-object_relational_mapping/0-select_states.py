@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' 0-select_states module '''
+"""lists all states"""
 
 import MySQLdb
 from sys import argv
@@ -8,16 +8,19 @@ from sys import argv
 if __name__ == "__main__":
     """./0-select_states.py root root hbtn_0e_0_usa"""
 
-    db = MySQLdb.connect(
-        host='localhost',
-        port=3306,
+    db_conn = MySQLdb.connect(
+        host="localhost",
         user=argv[1],
+        port=3306,
         password=argv[2],
         database=argv[3]
     )
-    cursor = db.cursor()
-    cursor.execute("""SELECT * FROM states""")
-    statesList = cursor.fetchall()
-    db.close()
-    for item in statesList:
+
+    db_cursor = db_conn.cursor()
+    db_cursor.execute("SELECT * FROM states")
+    rows_selected = db_cursor.fetchall()
+
+    db_conn.close()
+
+    for item in rows_selected:
         print(item)
