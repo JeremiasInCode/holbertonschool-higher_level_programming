@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""
-    lists all states
-"""
+"""lists all states"""
+
+
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
@@ -14,10 +14,13 @@ if __name__ == "__main__":
         database=argv[3]
     )
     db_cursor = db_conn.cursor()
-    db_cursor.execute("SELECT state.id, state.name FROM states")
+    db_cursor.execute (
+        "SELECT * FROM states\
+        WHERE name LIKE BINARY 'N%'\
+        ORDER BY states.id ASC"
+    )
     rows_selected = db_cursor.fetchall()
     for item in rows_selected:
-        if item[1].startswith('N'):
-            print(item)
+        print(item)
     db_cursor.close()
     db_conn.close()
