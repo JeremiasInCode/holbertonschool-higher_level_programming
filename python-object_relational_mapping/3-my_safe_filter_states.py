@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """ takes in an argument and displays all values in
-    the states table of hbtn_0e_0_usa where name matches the argument"""
-
+    the states table of hbtn_0e_0_usa with with dependency
+    injection management"""
 import MySQLdb
 from sys import argv
 
 
 if __name__ == "__main__":
-    """./2-my_filter_states.py root root hbtn_0e_0_usa 'Arizona'"""
+    """./3-my_filter_states.py root root hbtn_0e_0_usa 'Arizona'"""
 
     db_conn = MySQLdb.connect(
         host="localhost",
