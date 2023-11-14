@@ -6,7 +6,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    """./0-select_states.py root root hbtn_0e_0_usa"""
+    """./1-filter_states.py"""
 
     db_conn = MySQLdb.connect(
         host="localhost",
@@ -17,11 +17,10 @@ if __name__ == "__main__":
     )
 
     db_cursor = db_conn.cursor()
-    db_cursor.execute (
+    db_cursor.execute(
         "SELECT * FROM states \
         WHERE name LIKE BINARY 'N%' \
         ORDER BY states.id ASC"
-        
     )
     rows_selected = db_cursor.fetchall()
 
