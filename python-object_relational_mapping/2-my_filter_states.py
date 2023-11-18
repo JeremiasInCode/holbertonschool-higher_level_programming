@@ -1,27 +1,20 @@
 #!/usr/bin/python3
-"script that lists all states"
-import MySQLdb
-import sys
+"""Filter states by user input."""
 
-if __name__ == "__main__":
 
-    db = MySQLdb.connect(
-        host="localhost",
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-        port=3306
-    )
+if __name__ == '__main__':
+    import MySQLdb
+    from sys import argv
 
-    db_cursor = db.cursor()
-    sn_searched = sys.argv[4]
+    db = MySQLdb.connect(host='localhost', port=3306,
+                         user=argv[1], passwd=argv[2], db=argv[3])
+    name = argv[4]
 
-    db_cursor.execute("SELECT id, name FROM states WHERE name LIKE '{}'\
-                        ORDER BY id ASC LIMIT 1".format(sys.argv[4]))
-
-    q_rows = db_cursor.fetchall()
-    for i in q_rows:
-        print(i)
-
-    db_cursor.close()
-    db.close()
+    cur = db.cursor()
+    cur.execute("""SELECT * FROM states WHERE name LIKE BINARY '{}'
+                ORDER BY states.id ASC""".format(name))
+    states = cur.fetchall()
+    for row in states:
+        print(row)
+    cur = cur.close()
+    db = db.close()
