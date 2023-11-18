@@ -5,7 +5,6 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-
     db = MySQLdb.connect(
         host="localhost",
         user=sys.argv[1],
@@ -16,7 +15,7 @@ if __name__ == "__main__":
 
     db_cursor = db.cursor()
     db_cursor.execute("SELECT id, name FROM\
-                      states WHERE name LIKE 'N%' ORDER BY states.id LIMIT 2")
+                      states WHERE name LIKE 'N%' ORDER BY states.id")
     q_rows = db_cursor.fetchall()
     for i in q_rows:
         print(i)
