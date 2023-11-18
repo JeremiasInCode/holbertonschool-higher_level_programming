@@ -1,25 +1,23 @@
 #!/usr/bin/python3
-""" takes in an argument and displays all values in
-    the states table of hbtn_0e_0_usa with with dependency
-    injection management"""
-
-
+"script that lists all states with a name"
+import MySQLdb
+import sys
 if __name__ == "__main__":
-    import MySQLdb
-    from sys import argv
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3],
+                         port=3306)
 
-    db_conn = MySQLdb.connect(
-        host="localhost",
-        user=argv[1],
-        port=3306,
-        password=argv[2],
-        db=argv[3]
-    )
-    db_cursor = db_conn.cursor()
-    db_cursor.execute("SELECT * FROM states WHERE\
-                    BINARY name = %(name)s", {'name': sys.argv[4]})
-    rows_selected = db_cursor.fetchall()
-    for r in rows_selected:
-        print(r)
+    db_cursor = db.cursor()
+    sn_searched = sys.argv[4]
+
+    s_name = sys.argv[4]
+    my_query = ("SELECT * FROM states WHERE name = %s ORDER BY id")
+
+    db_cursor.execute(my_query, (s_name,))
+
+    q_rows = db_cursor.fetchall()
+    for i in q_rows:
+        print(i)
+
     db_cursor.close()
-    db_conn.close()
+    db.close()
