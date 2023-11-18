@@ -1,44 +1,25 @@
 #!/usr/bin/python3
-"""
-Script that takes in an argument and displays all values in the states
-table of hbtn_0e_0_usa where name matches the argument.
-But this time, it is safe from MySQL injections!
-"""
-
-import sys
+"script that lists all states"
 import MySQLdb
-
+import sys
 if __name__ == "__main__":
-    # Get command line argument
-    search_name = sys.argv[1]
+    db = MySQLdb.connect(
+        host="localhost",
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        port=3306
+    )
 
-    # Connect to the MySQL server
-    db = MySQLdb.connect(host="localhost",
-                         port=3306,
-                         user="username",
-                         passwd="password",
-                         db="database")
+    db_cursor = db.cursor()
+    sn_searched = sys.argv[4]
 
-    # Create a cursor object to execute SQL queries
-    cursor = db.cursor()
+    db_cursor.execute("SELECT id, name FROM states WHERE name LIKE '{}'\
+                        ORDER BY id ASC".format(sys.argv[4]))
 
-    # Use the escape_string method to
-    # sanitize the input and prevent SQL injection
-    sanitized_name = MySQLdb.escape_string(search_name)
+    q_rows = db_cursor.fetchall()
+    for i in q_rows:
+        print(i)
 
-    # Execute the SQL query to select states matching the sanitized input
-    query = "SELECT * FROM states WHERE name \
-    LIKE BINARY '{}' ORDER BY id ASC".format(sanitized_name)
-
-    cursor.execute(query)
-
-    # Fetch all the rows returned by the query
-    rows = cursor.fetchall()
-
-    # Print the results
-    for row in rows:
-        print(row)
-
-    # Close the cursor and database connection
-    cursor.close()
+    db_cursor.close()
     db.close()
