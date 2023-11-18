@@ -6,7 +6,7 @@ import sys
 
 if __name__ == "__main__":
     db = MySQLdb.connect(
-        host="localhost", 
+        host="localhost",
         user=sys.argv[1],
         passwd=sys.argv[2],
         db=sys.argv[3],
@@ -14,7 +14,8 @@ if __name__ == "__main__":
     )
 
     db_cursor = db.cursor()
-    db_cursor.execute("SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
+    db_cursor.execute("SELECT id, name FROM\
+                      states WHERE name LIKE 'N%' ORDER BY states.id")
     q_rows = db_cursor.fetchall()
 
     for i in q_rows:
