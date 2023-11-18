@@ -18,6 +18,7 @@ if __name__ == "__main__":
     db_cursor = db_conn.cursor()
     db_cursor.execute("SELECT id, cities.name, states.name FROM cities "
                         + "INNER JOIN states ON states.id = cities.state_id")
+
     rows = db_cursor.fetchall()
     for row in rows:
         print(row)
