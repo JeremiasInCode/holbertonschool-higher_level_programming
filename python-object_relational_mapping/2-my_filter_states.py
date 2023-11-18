@@ -16,7 +16,7 @@ if __name__ == "__main__":
     sn_searched = sys.argv[4]
 
     db_cursor.execute("SELECT id, name FROM states WHERE name LIKE '{}'\
-                        ORDER BY id ASC".format(sys.argv[4]))
+                        ORDER BY id ASC LIMIT 1".format(sys.argv[4]))
 
     q_rows = db_cursor.fetchall()
     for i in q_rows:
