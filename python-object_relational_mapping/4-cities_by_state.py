@@ -1,24 +1,19 @@
 #!/usr/bin/python3
-""" lists all cities from the database hbtn_0e_4_usa"""
+"This script lists all states starting with an 'N' from the db 'hbtn_0e_usa'"
 import MySQLdb
-from sys import argv
-
-
+import sys
 if __name__ == "__main__":
-    """./4-my_filter_states.py root root hbtn_0e_0_usa 'Arizona'"""
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3],
+                         port=3306)
+    cur = db.cursor()
 
-    db_conn = MySQLdb.connect(
-        host="localhost",
-        user=argv[1],
-        port=3306,
-        password=argv[2],
-        db=argv[3]
-    )
-
-    db_cursor = db_conn.cursor()
-    db_cursor.execute("SELECT id, cities.name, states.name FROM cities "
-                        + "INNER JOIN states ON states.id = cities.state_id")
-
-    rows = db_cursor.fetchall()
-    for row in rows:
-        print(row)
+    cur.execute('''SELECT cities.id, cities.name, states.name
+                FROM cities
+                JOIN states
+                ON state_id = states.id
+                ORDER BY cities.id''')
+    fetchs = cur.fetchall()
+    for x in fetchs:
+        print(x)
+    db.close()
