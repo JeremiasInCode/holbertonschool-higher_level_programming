@@ -1,21 +1,20 @@
 #!/usr/bin/python3
-"script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa"
+"""Script that takes in an argument and displays all values in the
+states table of hbtn_0e_0_usa where name matches the argument"""
 
-import MySQLdb
-import sys
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3],
-                         port=3306)
-
-    db_cursor = db.cursor()
-    sn_searched=sys.argv[4]
-
-    db_cursor.execute("SELECT id, name FROM states WHERE name LIKE '{}' ORDER BY id ASC".format(sys.argv[4]))
-
-    q_rows = db_cursor.fetchall()
-    for i in q_rows:
-        print(i)
-
-    db_cursor.close()
+    import MySQLdb
+    from sys import argv
+    # Connect to the database
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=argv[1], passwd=argv[2], db=argv[3])
+    cur = db.cursor()
+    # Execute the SQL query
+    query = ("""SELECT * FROM states WHERE name
+            LIKE BINARY '%{}%' ORDER BY id""".format(argv[4]))
+    cur.execute(query)
+    states = cur.fetchall()
+    # Print each state
+    for state in states:
+        print(state)
     db.close()
