@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-"""Task 4"""
+"""Task 4. Print a square"""
 
 
 def print_square(size):
-    error = "size must be an integer"
-
-    if (not isinstance(size, int) or
-       (isinstance(size, float) and size < 0)):
-        raise TypeError(error)
-
+    """
+    Print in stdout a square with the character #
+    """
+    if type(size) is not int:
+        raise TypeError("size must be an integer")
     if size < 0:
         raise ValueError("size must be >= 0")
-    for element1 in range(size):
-        for element2 in range(size):
-            print("#", end="")
-        print("")
+    if size < 0 and size < 0:
+        raise ValueError("size must be an integer")
+
+    for _ in range(size):
+        print('#' * size)
