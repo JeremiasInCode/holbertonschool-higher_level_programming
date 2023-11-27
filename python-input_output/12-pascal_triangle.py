@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Task 12 """
 
+
 def pascal_triangle(n):
     """Implement pascal triangle in an algorithm"""
 
