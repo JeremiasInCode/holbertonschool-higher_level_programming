@@ -1,20 +1,19 @@
 #!/usr/bin/python3
 """ Task 12 """
 
-
 def pascal_triangle(n):
-    """Implement pascal triangle in a algoritm"""
+    """Implement pascal triangle in an algorithm"""
 
     triangle = []
-    row = [1]
-    cero = [0]
 
-    concat1 = row + cero
-    concat2 = cero + row
+    for _ in range(n):
+        row = [1]
+        if triangle:
+            last_row = triangle[-1]
+            new_row = [sum(pair) for pair in zip(last_row, last_row[1:])]
+            row.extend(new_row)
+            row.append(1)
 
-    """ concat in pairs """
-    pairs = zip(concat1, concat2)
-    """ Add these pairs to create the row """
-    add = [element + d for element, d in pairs] 
-    triangle.append(add)
+        triangle.append(row)
+
     return triangle
