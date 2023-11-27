@@ -1,16 +1,14 @@
-The ``5-text_indentation`` module
-======================
+The ''5-text_indentation'' module
+============================
 
-Using ``text_indentation``
--------------------
+Using ''text_indentation''
+--------------------
 
-Test for the text_indentation function.  First import
-``text_indentation`` from the ``5-text_indentation`` module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-    >>> text_indentation = __import__("5-text_indentation").text_indentation
-
-Now use it:
-
+Functional Cases:
+----------------
+1. String with all delimiters:
     >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
     ... Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
     ... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
@@ -47,30 +45,50 @@ Now use it:
     Quae animi affectio suum cuique tribuens atque hanc, quam dico.
     <BLANKLINE>
     Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
-    
-    >>> text_indentation("")
 
-    >>> text_indentation("Holberton School")
-    Holberton School
+2. TypeError - input not a string:
+    >>> text_indentation(5)
+    Traceback (most recent call last):
+    TypeError: text must be a string
 
-    >>> text_indentation("Holberton.School")
-    Holberton.
+3. Delimiter at the end:
+    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit?")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit?
     <BLANKLINE>
-    School
 
-    >>> text_indentation(1)
-    Traceback (most recent call last):
-    ...
-    TypeError: text must be a string
+4. Delimiter at the beginnning:
+    >>> text_indentation("?")
+    ?
+    <BLANKLINE>
 
-    >>> text_indentation(None)
-    Traceback (most recent call last):
-    ...
-    TypeError: text must be a string
+5. String without delimiters:
+    >>> text_indentation("Hello World")
+    Hello World
 
+Edge Cases:
+----------
+
+6. TypeError - No arguments:
     >>> text_indentation()
     Traceback (most recent call last):
-    ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
-    >>> text_indentation("hello world")
-    hello world
+
+
+7. TypeError - More than 1 argument:
+    >>> text_indentation("hello", "world")
+    Traceback (most recent call last):
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+8. NameError - name is not defined:
+    >>> text_indentation(test)
+    Traceback (most recent call last):
+    NameError: name 'test' is not defined
+
+9. String with just delimiters:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
