@@ -1,34 +1,22 @@
 #!/usr/bin/python3
-"""Task 2"""
+"""
+Task 2. Divide a matrix
+"""
 
 
 def matrix_divided(matrix, div):
-    """Divide a matrix."""
-    error = "matrix must be a matrix (list of lists) of integers/floats"
-    size_error = "Each row of the matrix must have the same size"
-
-    if (not isinstance(matrix, list) or
-            not all(isinstance(element, list) for element in matrix)):
-        raise TypeError(error)
+    """
+    Divide all elements of a matrix by div
+    """
+    if any(not all(isinstance(i, (int, float)) for i in n) for n in matrix):
+        raise TypeError('matrix must be a matrix (list of lists) '
+                        'of integers/floats')
+    if any(len(row) != len(matrix[0]) for row in matrix):
+        raise TypeError('Each row of the matrix must have the same size')
     if not isinstance(div, (int, float)):
-        raise TypeError("div must be a number")
-
+        raise TypeError('div must be a number')
     if div == 0:
-        raise ZeroDivisionError("division by zero")
-
-    new_matrix = []
-    buffer_row = []
-    len_original_row = len(matrix[0])
-
-    for row in matrix:
-        if len_original_row != len(row):
-            raise TypeError(size_error)
-        for element in row:
-            if isinstance(element, (int, float)):
-                buffer_row.append(round(element / div, 2))
-            else:
-                raise TypeError(error)
-        new_matrix.append(buffer_row)
-        """For each row, it is cleaned"""
-        buffer_row = []
+        raise ZeroDivisionError('division by zero')
+    """Use of lambda function and list comprehension"""
+    new_matrix = [list(map(lambda x: round(x / div, 2), n)) for n in matrix]
     return new_matrix
