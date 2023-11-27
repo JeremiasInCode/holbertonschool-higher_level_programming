@@ -1,19 +1,21 @@
 #!/usr/bin/python3
-""" Task 7 """
+"""Task 7. Load, add, save
+Add all arguments to a Python list, and then save them to a file
+"""
 import sys
-
+import os
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-args = sys.argv[1:]
 
-try:
-    with open('add_item.json') as f:
-        data_obj = load_from_json_file('add_item.json')
-except FileNotFoundError:
-    data_obj = []
-except Exception as e:
-    print(f"Error loading data from JSON file: {e}")
-    sys.exit(1)
 
-data_obj.extend(args)
-save_to_json_file(data_obj, 'add_item.json')
+filename = "add_item.json"
+
+if os.path.isfile(filename):
+    new_list = load_from_json_file(filename)
+else:
+    new_list = []
+
+for i in range(1, len(sys.argv)):
+    new_list.append(sys.argv[i])
+
+save_to_json_file(new_list, filename)
