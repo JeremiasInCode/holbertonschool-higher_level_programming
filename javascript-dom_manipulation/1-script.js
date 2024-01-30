@@ -5,4 +5,4 @@ function changeColor() {
   header.style.color = "red";
 }
 
-div.addEventListener('click', changeColor)
+div.addEventListener("click", changeColor);
